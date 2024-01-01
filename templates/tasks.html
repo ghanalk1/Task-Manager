@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Your tasks{% endblock %}
+
+{% block content %}
+    <h2>Add Task</h2>
+    <form action="/tasks" method="post">
+        {{ task_form.hidden_tag() }}
+        <div>
+            {{ task_form.content.label }}
+            {{ task_form.content }}
+        </div>
+        <button type="submit">Add task</button>
+    </form>
+    <h2>Your tasks</h2>
+    {% for task in user_tasks %}
+        <div>
+            <p>{{ task.content }}</p>
+            <small>created on {{ task.date_created }}</small>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv
+venv/
+env/
+
+# Database files
+*.db
+*.sqlite
+
+# Configuration files
+instance/
+
+# Compiled Python files
+*.pyc
+
+# Dependency folders
+lib/
+lib64/
+local/
+build/
+bin/
+include/
+
+# Database migrations
+migrations/

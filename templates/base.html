@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Base{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Task Manager</h1>
+        <p>Your personal task assistant</p>
+    </header>
+    <nav>
+        <ul>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+
+    <footer>
+        <p>&copy; Task Manager version 1.0 by Ghanal Kaushik.</p>
+    </footer>
+</body>
+</html>
